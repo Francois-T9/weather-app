@@ -5,7 +5,7 @@ Exercise from [_The Odin Project_](https://www.theodinproject.com/lessons/node-p
 
 ## Live view of the app
 
-🔗[Add tasks!]([https://raw.githack.com/Francois-T9/todo-list/gh-pages/index.html](https://raw.githack.com/Francois-T9/weather-app/main/index.html))
+🔗[Check the weather!]([https://raw.githack.com/Francois-T9/todo-list/gh-pages/index.html](https://raw.githack.com/Francois-T9/weather-app/main/index.html)
 
 ## Things to be implemented
 -Error handling </br>
