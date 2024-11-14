@@ -21,19 +21,28 @@ const handleClick = (() => {
 })();
 
 const getAPIResponse = async (key, location) => {
-  const response = await fetch(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${key}&contentType=json`
-  );
-  const data = await response.json();
-  const icon = await data.currentConditions.icon;
-  console.log(data);
-  setImageSource(addFileExtension("img/", icon, ".png"));
-  setWeatherConditions(data.currentConditions.conditions);
-  setTime(data.currentConditions.datetime);
-  setTemperature(data.currentConditions.temp);
-  setSunrise(data.currentConditions.sunrise);
-  setSunset(data.currentConditions.sunset);
-  displayLocation(data.resolvedAddress);
+  try {
+    const response = await fetch(
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${key}&contentType=json`
+    );
+    if (!response.ok) {
+      throw new Error(` ${response.status} ${response.statusText}`);
+    }
+    const data = await response.json();
+    const icon = await data.currentConditions.icon;
+    console.log(data);
+
+    //   function call
+    setImageSource(addFileExtension("img/", icon, ".png"));
+    setWeatherConditions(data.currentConditions.conditions);
+    setTime(data.currentConditions.datetime);
+    setTemperature(data.currentConditions.temp);
+    setSunrise(data.currentConditions.sunrise);
+    setSunset(data.currentConditions.sunset);
+    displayLocation(data.resolvedAddress);
+  } catch (error) {
+    console.error("Failed to fetch weather data:", error);
+  }
 };
 const displayLocation = (city) => {
   const cityContainer = document.querySelector(".city-name h2");
