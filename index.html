@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="img/partly-cloudy-day.png" alt="" />
+        <h1>Weather forecast</h1>
+      </div>
+      <div class="user-inputs">
+        <input type="text" id="search-bar" placeholder="Enter a location..." />
+        <button id="search-btn">Search</button>
+      </div>
+      <div class="display-content">
+        <div class="city-name">
+          <h2>Test</h2>
+          <img src="" alt="" />
+        </div>
+        <div class="weather-information">
+          <div class="conditions">
+            <h3>Sky conditions</h3>
+            <p id="conditions">Clear</p>
+          </div>
+          <div class="temperature">
+            <h3>Current temperature</h3>
+            <p id="current-temp"></p>
+          </div>
+          <div class="time">
+            <h3>Current time</h3>
+            <p id="time"></p>
+          </div>
+          <div class="sunrise">
+            <h3>Sunrise</h3>
+            <p id="sunrise"></p>
+          </div>
+          <div class="sunset">
+            <h3>Sunset</h3>
+            <p id="sunset"></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a href="https://github.com/Francois-T9" target="_blank"
+          ><img src="img/github.svg" alt=""
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>
